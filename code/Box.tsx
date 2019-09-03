@@ -42,7 +42,7 @@ export function Box(props: Props) {
 addPropertyControls(Box, {
   linkTitle: {
     type: ControlType.Boolean,
-    title: "Link Title?",
+    title: "Link Title",
     defaultValue: true,
     enabledTitle: "True",
     disabledTitle: "False"
@@ -54,7 +54,7 @@ addPropertyControls(Box, {
   },
   showSubtitle: {
     type: ControlType.Boolean,
-    title: "Subtitle?",
+    title: "Subtitle",
     defaultValue: true,
     enabledTitle: "True",
     disabledTitle: "False"
@@ -69,7 +69,7 @@ addPropertyControls(Box, {
   },
   showLink: {
     type: ControlType.Boolean,
-    title: "Link?",
+    title: "Link",
     defaultValue: false,
     enabledTitle: "True",
     disabledTitle: "False"
@@ -84,7 +84,7 @@ addPropertyControls(Box, {
   },
   showText: {
     type: ControlType.Boolean,
-    title: "Text?",
+    title: "Text",
     defaultValue: true,
     enabledTitle: "True",
     disabledTitle: "False"
@@ -100,14 +100,14 @@ addPropertyControls(Box, {
   },
   showFooter: {
     type: ControlType.Boolean,
-    title: "Text?",
+    title: "Footer",
     defaultValue: false,
     enabledTitle: "True",
     disabledTitle: "False"
   },
   footer: {
     type: ControlType.String,
-    title: "Paragraph Text",
+    title: "Footer Text",
     defaultValue: "This is a footer.",
     hidden(props) {
       return props.showFooter === false;
