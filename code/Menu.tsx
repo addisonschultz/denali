@@ -1,4 +1,5 @@
 import * as React from "react";
+import { addPropertyControls, ControlType } from "framer";
 
 export function Menu() {
   return (
