@@ -1,7 +1,19 @@
 import * as React from "react";
-import "denali-css/dist/css/denali-v0.4.2.css";
-import "denali-css/dist/css/denali-icon-font-v1.0.0.css";
 
 export function Select() {
-  return <div />;
+  return (
+    <div className="input has-arrow">
+      <select name="">
+        <option value="" disabled="" selected="">
+          Select your option
+        </option>
+
+        <option value="">Value 1</option>
+
+        <option value="">Value 2</option>
+
+        <option value="">Value 3</option>
+      </select>
+    </div>
+  );
 }

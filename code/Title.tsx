@@ -1,7 +1,15 @@
 import * as React from "react";
-import "denali-css/dist/css/denali-v0.4.2.css";
-import "denali-css/dist/css/denali-icon-font-v1.0.0.css";
 
 export function Title() {
-  return <div />;
+  return (
+    <div className="title">
+      <span className="bar"></span>
+
+      <div className="title-text">
+        <h3>Title Element</h3>
+
+        <h6>Caption</h6>
+      </div>
+    </div>
+  );
 }

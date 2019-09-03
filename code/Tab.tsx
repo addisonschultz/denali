@@ -1,7 +1,29 @@
 import * as React from "react";
-import "denali-css/dist/css/denali-v0.4.2.css";
-import "denali-css/dist/css/denali-icon-font-v1.0.0.css";
 
 export function Tab() {
-  return <div />;
+  return (
+    <div className="tabs is-primary">
+      <ul>
+        <li className="is-active">
+          <a>Tab 1</a>
+        </li>
+
+        <li>
+          <a>Tab 2</a>
+        </li>
+
+        <li>
+          <a>Tab 3</a>
+        </li>
+
+        <li>
+          <a>Tab 4</a>
+        </li>
+
+        <li className="is-disabled">
+          <a>Tab 5</a>
+        </li>
+      </ul>
+    </div>
+  );
 }
