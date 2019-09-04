@@ -9,7 +9,7 @@ type Props = {
   context: string;
 };
 
-export function InlineAlert(props: Props) {
+export function AlertInline(props: Props) {
   return (
     <div
       className={`alert ${props.kind} is-inline`}
@@ -23,7 +23,7 @@ export function InlineAlert(props: Props) {
   );
 }
 
-addPropertyControls(InlineAlert, {
+addPropertyControls(AlertInline, {
   kind: {
     type: ControlType.Enum,
     title: "Kind",
@@ -49,7 +49,7 @@ addPropertyControls(InlineAlert, {
   }
 });
 
-InlineAlert.defaultProps = {
+AlertInline.defaultProps = {
   height: 45,
   width: 800
 };
