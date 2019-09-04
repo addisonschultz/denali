@@ -11,6 +11,7 @@ type Props = {
   size: string;
   showIcon: boolean;
   icon: string;
+  loader: boolean;
 };
 
 export function Button(props: Props) {
@@ -18,12 +19,15 @@ export function Button(props: Props) {
     <button
       className={`button ${props.kind} ${props.inverse && "is-inverse"} ${
         props.size
-      } ${props.showIcon && props.text == "" ? "has-icon" : null}`}
+      } ${
+        props.showIcon && props.text == "" ? "has-icon" : null
+      } ${props.loader && "has-loader"}`}
       disabled={props.disabled}
       style={{ width: "100%" }}
     >
       {props.showIcon && <i className={`d-icon ${props.icon} is-small`}></i>}
-      {props.text}
+      {props.loader && <div className="loader"></div>}
+      {props.loader ? null : props.text}
     </button>
   );
 }
@@ -1859,6 +1863,13 @@ addPropertyControls(Button, {
     hidden(props) {
       return props.showIcon == false;
     }
+  },
+  loader: {
+    type: ControlType.Boolean,
+    title: "Loader",
+    enabledTitle: "True",
+    disabledTitle: "False",
+    defaultValue: false
   }
 });
 
