@@ -82,7 +82,7 @@ addPropertyControls(Button, {
   },
   icon: {
     type: ControlType.Enum,
-    title: "Kind",
+    title: "Icon",
     options: [
       "d-5g-solid",
       "d-5g",
