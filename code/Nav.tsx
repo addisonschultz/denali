@@ -1,18 +1,25 @@
 import * as React from "react";
 import { addPropertyControls, ControlType } from "framer";
+import { url } from "framer/resource";
 
 type Props = {
   height: number;
   width: number;
   image: string;
+  color: string;
   icons: string[];
 };
 
 export function Navigation(props: Props) {
+  let denali = "code/assets/Denali_Logo_FullWhite@2x.png";
+  let verizon = "code/assets/vz_small_300_rgb_r.png";
   return (
-    <nav className="nav">
+    <nav className="nav" style={{ background: props.color }}>
       <div className="nav-left">
-        <img className="nav-brand" src={props.image} />
+        <img
+          className="nav-brand"
+          src={props.image === "denali" ? url(denali) : url(verizon)}
+        />
       </div>
       <div className="nav-right">
         {props.icons &&
@@ -30,9 +37,16 @@ export function Navigation(props: Props) {
 
 addPropertyControls(Navigation, {
   image: {
-    type: ControlType.File,
-    title: "Image",
-    allowedFileTypes: ["jpg", "png", "svg"]
+    type: ControlType.Enum,
+    title: "Brand Logo",
+    defaultValue: "denali",
+    options: ["denali", "verizon"],
+    optionTitles: ["Denali", "Verizon"]
+  },
+  color: {
+    type: ControlType.Color,
+    title: "Nav Color",
+    defaultValue: "#092D45"
   },
   icons: {
     type: ControlType.Array,

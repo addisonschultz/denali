@@ -5,6 +5,7 @@ type Props = {
   height: number;
   width: number;
   kind: string;
+  color: string;
   text: string;
   context: string;
 };
@@ -15,8 +16,10 @@ export function AlertInline(props: Props) {
       className={`alert ${props.kind} is-inline`}
       style={{ width: "100%", padding: "10px" }}
     >
-      <p>
-        <span className={"is-bold"}>{props.text}</span>
+      <p style={{ color: props.color }}>
+        <span className={"is-bold"} style={{ color: props.color }}>
+          {props.text}
+        </span>
         {props.context}
       </p>
     </div>
@@ -37,6 +40,13 @@ addPropertyControls(AlertInline, {
     optionTitles: ["Default", "Info", "Success", "Warning", "Danger"],
     defaultValue: "has-bg-status-default"
   },
+  color: {
+    type: ControlType.Enum,
+    title: "Color",
+    defaultValue: "black",
+    options: ["white", "black"],
+    optionTitles: ["White", "Black"]
+  },
   text: {
     type: ControlType.String,
     title: "Bold Text",
@@ -44,7 +54,7 @@ addPropertyControls(AlertInline, {
   },
   context: {
     type: ControlType.String,
-    title: "text",
+    title: "Text",
     defaultValue: "Do not use for Production or CI/CD (Screwdriver)"
   }
 });

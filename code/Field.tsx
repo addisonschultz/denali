@@ -20,8 +20,6 @@ type Props = {
   showButton: boolean;
   buttonIcon: string;
   showColor: boolean;
-  inputColor: string;
-  inputWeight: string;
   iconColor: string;
   iconWeight: string;
   buttonColor: string;
@@ -51,7 +49,6 @@ export function Field(props: Props) {
             <textarea
               placeholder={props.placeholder}
               disabled={props.disabled}
-              className={`has-bg-${props.inputColor}-${props.inputWeight}`}
             ></textarea>
             {props.error && <p className="message">{props.errorMessage}</p>}
           </>
@@ -61,7 +58,6 @@ export function Field(props: Props) {
               ? Icon
               : null}
             <input
-              className={`has-bg-${props.inputColor}-${props.inputWeight}`}
               type={props.type}
               placeholder={props.placeholder}
               disabled={props.disabled}
@@ -3755,79 +3751,6 @@ addPropertyControls(Field, {
     enabledTitle: "True",
     disabledTitle: "False",
     defaultValue: false
-  },
-  inputColor: {
-    type: ControlType.Enum,
-    title: "Input Color",
-    options: [
-      "default",
-      "red",
-      "orange",
-      "yellow",
-      "lime",
-      "green",
-      "sky",
-      "blue",
-      "purple",
-      "violet",
-      "pink"
-    ],
-    optionTitles: [
-      "Default",
-      "Red",
-      "Orange",
-      "Yellow",
-      "Lime",
-      "Green",
-      "Sky",
-      "Blue",
-      "Purple",
-      "Violet",
-      "Pink"
-    ],
-    hidden(props) {
-      return props.showColor === false;
-    }
-  },
-  inputWeight: {
-    type: ControlType.Enum,
-    title: "Input Weight",
-    options: [
-      "100",
-      "200",
-      "300",
-      "400",
-      "500",
-      "600",
-      "700",
-      "800",
-      "900",
-      "r100",
-      "r200",
-      "r300",
-      "r400",
-      "r500"
-    ],
-    optionTitles: [
-      "100",
-      "200",
-      "300",
-      "400",
-      "500",
-      "600",
-      "700",
-      "800",
-      "900",
-      "r100",
-      "r200",
-      "r300",
-      "r400",
-      "r500"
-    ],
-    defaultValue: "500",
-    hidden(props) {
-      return props.showColor === false;
-    }
   },
   iconColor: {
     type: ControlType.Enum,

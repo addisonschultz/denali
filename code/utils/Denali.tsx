@@ -10,8 +10,7 @@ function Denali() {
 
     // Add link tag to add main css
     let css = document.createElement("link");
-    css.href =
-      "https://denali-design.github.io/denali-css/dist/css/denali-v0.4.2.min.css";
+    css.href = "https://unpkg.com/denali-css/dist/css/denali-v0.4.2.css";
     css.id = "framerDenaliCSS";
     css.rel = "stylesheet";
     document.head.appendChild(css);
@@ -19,7 +18,7 @@ function Denali() {
     // Add link tag to add font css
     let font = document.createElement("link");
     font.href =
-      "https://denali-design.github.io/denali-css/dist/css/denali-icon-font-v1.0.0.css";
+      "https://unpkg.com/denali-css/dist/css/denali-icon-font-v1.0.0.css";
     font.id = "framerDenaliCSS";
     font.rel = "stylesheet";
     document.head.appendChild(font);

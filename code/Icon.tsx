@@ -1815,7 +1815,7 @@ addPropertyControls(Icon, {
   },
   color: {
     type: ControlType.Enum,
-    title: "Button Color",
+    title: "Icon Color",
     options: [
       "default",
       "red",
@@ -1845,7 +1845,7 @@ addPropertyControls(Icon, {
   },
   weight: {
     type: ControlType.Enum,
-    title: "Button Weight",
+    title: "Icon Weight",
     options: [
       "100",
       "200",

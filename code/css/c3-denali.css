@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+.chart-container {
+  position: relative;
+}
+
+.side-legend {
+  display: flex;
+  flex-direction: row-reverse;
+  /* max-width: max-content; */
+  white-space: nowrap;
+}
+
+.side-legend .legend {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.side-legend .legend .legend-item {
+  margin: 4px 0px;
+}
+
+.side-legend .chart {
+  flex: auto;
+}
+
+.c3-legend-item-tile {
+  stroke-linecap: round;
+}
+
+.c3-legend-item .c3-legend-item-tile {
+  transform: translate(-4px, 2px);
+}
+
+.c3-legend-item text {
+  font-size: 12px;
+  font-family: 'Helvetica', sans-serif;
+  color: #303030;
+}
+
+
+.c3-legend-background {
+  stroke: none;
+  fill: none;
+}
+
+/* .c3-legend-item {
+  border-radius: 10px;
+  background: red;
+} */
+
+.tick {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  color: #303030;
+}
+
+.tick > line {
+  visibility: hidden;
+}
+
+.c3-axis-y > path.domain {
+  visibility: hidden;
+}
+
+.c3-axis-x > path.domain {
+  visibility: hidden;
+}
+
+.c3-xgrid, .c3-ygrid {
+  stroke-dasharray: none;
+}
+
+line.c3-ygrid:last-child {
+  stroke: rgba(48,48,48,.2);
+}
+
+line.c3-ygrid:first-child {
+  stroke: rgba(48,48,48,.4);
+}
+
+.c3-grid line {
+  stroke: rgba(48,48,48,.08);
+}
+
+
+
+
+/* Tooltop */
+
+.c3-tooltip-container {
+  background: #FFFFFF;
+  border: 2px solid #E8E8E8;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.16);
+  border-radius: 4px;
+  padding: 14px;
+  font-family: 'Helvetica', sans-serif;
+  color: #303030;
+}
+
+.c3-tooltip {
+  box-shadow: none;
+}
+
+.c3-tooltip tr {
+  border: none;
+}
+
+.c3-tooltip tr td {
+  border: none;
+}
+
+.c3-tooltip tr td.name span {
+  border-radius: 50%;
+}
+
+.c3-tooltip tr td.name {
+  font-size: 12px;
+  color: #9A9A9A;
+  letter-spacing: 0;
+}
+
+.c3-tooltip tr th {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.c3-tooltip th {
+  background-color: transparent;
+  color: #303030;
+}
+
+
+/* Custom Legend */
+.unit-label {
+  opacity: 0.48;
+  font-family: "Helvetica";
+  font-size: 12px;
+  color: #303030;
+  position: absolute;
+  margin-top: 2px;
+}
+.legend {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.legend div.legend-item {
+  background: rgba(48,48,48,.08);
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #303030;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+  margin: 0px 4px;
+}
+
+.legend div.legend-item span.badge {
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.legend-item-hidden {
+  opacity: .3;
+}
