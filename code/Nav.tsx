@@ -8,6 +8,7 @@ type Props = {
   image: string;
   color: string;
   icons: string[];
+  links: string[];
 };
 
 export function Navigation(props: Props) {
@@ -21,15 +22,28 @@ export function Navigation(props: Props) {
           src={props.image === "denali" ? url(denali) : url(verizon)}
         />
       </div>
+
       <div className="nav-right">
-        {props.icons &&
-          props.icons.map(icon => {
+        {props.links &&
+          props.links.map((link, index) => {
             return (
-              <a className="nav-icon">
-                <span className={`d-icon ${icon}`}></span>
+              <a href="#" className={`nav-item ${index === 0 && "is-active"}`}>
+                {link}
               </a>
             );
           })}
+      </div>
+      <div className="nav-right space-between-small-desktop-up">
+        <div className="nav-group">
+          {props.icons &&
+            props.icons.map(icon => {
+              return (
+                <a className="nav-icon">
+                  <span className={`d-icon ${icon}`}></span>
+                </a>
+              );
+            })}
+        </div>
       </div>
     </nav>
   );
@@ -1833,6 +1847,14 @@ addPropertyControls(Navigation, {
     },
     title: "Icon",
     maxCount: 3
+  },
+  links: {
+    type: ControlType.Array,
+    title: "Links",
+    defaultValue: ["Home", "About", "Support"],
+    propertyControl: {
+      type: ControlType.String
+    }
   }
 });
 
